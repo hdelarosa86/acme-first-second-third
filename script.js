@@ -6,15 +6,16 @@ const users = [
   { id: 4, name: 'lucy', slot: 'third', selected: false },
 ];
 
-//helper function
+//helper functions
 const render = (template, node) => {
   node.innerHTML += template;
 };
 
 const sortElements = parentContainer => {
   let parentContainerChildren = [...parentContainer.children];
-  parentContainer.innerHTML = '';
   let childInnerText = [];
+  parentContainer.innerHTML = '';
+  
   parentContainerChildren.forEach(ele => {
     childInnerText.push(ele.innerText);
   });
@@ -35,14 +36,12 @@ const shiftElements = ev => {
       let child = ev.target.parentElement.lastElementChild.removeChild(ele);
       if (ev.target.classList.contains('shift-right')) {
         ev.target.parentElement.nextElementSibling.lastElementChild.appendChild(
-          child
-        );
+          child);
         parentContainer =
           ev.target.parentElement.nextElementSibling.lastElementChild;
       } else {
         ev.target.parentElement.previousElementSibling.lastElementChild.appendChild(
-          child
-        );
+          child);
         parentContainer =
           ev.target.parentElement.previousElementSibling.lastElementChild;
       }
@@ -63,10 +62,9 @@ userDivs.forEach(ele => {
     ev.target.classList.toggle('selected');
     users.forEach( user => {
         if(user.name === ev.target.innerText){
-            (user.selected) ? user.selected = false : user.selected = true;     
+            (user.selected) ? user.selected = false : user.selected = true;  
         }
     })
-    console.log(users);
     ev.stopPropagation();
   });
 });
