@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-transform: uppercase;
+  margin: 2.25rem 0;
+}
+
+#container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#container > div {
+  width: 200px;
+  border: 1px solid tomato;
+  font-size: 1.2rem;
+}
+
+button {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.number-box {
+  padding: 1rem;
+}
+
+.box-theme {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  /* height: 50px; */
+  /* background-color: tomato; */
+  border: 1px solid white;
+}
+
+.not-disabled , .selected{
+    background-color: tomato;
+}
